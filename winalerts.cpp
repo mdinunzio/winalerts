@@ -12,11 +12,14 @@ namespace py = pybind11;
 #pragma comment (lib, "User32.lib")
 
 
-void alert(const std::string& message){
-	MessageBox(NULL, message.c_str(), "Hello", MB_OK);
+void alert(const std::string& message, const std::string& title){
+	MessageBox(NULL, message.c_str(), title.c_str(), MB_OK);
 }
 
 PYBIND11_MODULE(winalerts, handle) {
-	handle.doc() = "This is the module docs";
-	handle.def("alert", &alert, py::arg("message")="Alert");
+	handle.doc() = "A module for customizable Windows Alerts.";
+	handle.def(
+		"alert", &alert,
+		py::arg("message")="Alert",
+		py::arg("title")="Alert");
 }

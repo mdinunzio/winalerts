@@ -71,7 +71,7 @@ PYBIND11_MODULE(winalerts, handle) {
 	handle.def(
 		"message_box", &message_box,
 		"Displays a message box to the user.\n\n"
-		"Args:\n",
+		"Args:\n"
 		"\tmessage (str): The message that will appear in the box.\n"
 		"\ttitle (str): The text that will appear in the title.\n"
 		"\tbox_type (str): The type of box.\n"
@@ -83,7 +83,19 @@ PYBIND11_MODULE(winalerts, handle) {
 		"asterisk, question, stop, error, hand\n"
 		"\t\tDefaults to empty.\n"
 		"\tdefault_button (int): The default button, indexed starting at 1.\n"
-		"\tDefaults to 1.",
+		"\t\tDefaults to 1.\n"
+		"Returns:\n"
+		"\tint: The result from the user.\n"
+		"\t\tOne of the following:\n"
+		"\t\t1: OK\n"
+		"\t\t2: Cancel\n"
+		"\t\t3: Abort\n"
+		"\t\t4: Retry\n"
+		"\t\t5: Ignore\n"
+		"\t\t6: Yes\n"
+		"\t\t7: No\n"
+		"\t\t10: Try Again\n"
+		"\t\t11: Continue\n",
 		py::arg("message")="Alert",
 		py::arg("title")="Alert",
 		py::arg("box_type")="ok",

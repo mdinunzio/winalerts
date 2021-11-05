@@ -16,7 +16,7 @@ setup(
     version=__version__,
     author="Michael DiNunzio",
     author_email="mdinunzio@gmail.com",
-    url="",
+    url="https://github.com/mdinunzio/winalerts",
     description="A module providing and interface for Windows alerts.",
     long_description="",
     ext_modules=ext_modules,
